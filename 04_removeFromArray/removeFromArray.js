@@ -1,14 +1,7 @@
 const removeFromArray = function (arr, ...toBeDeleted) {
-  return arr.filter((item) => {
-    let keepItem = true;
-    for (const itemToDelete of toBeDeleted) {
-      if (item === itemToDelete) {
-        keepItem = false;
-        break;
-      }
-    }
-    return keepItem;
-  });
+  return arr.filter(
+    (item) => !toBeDeleted.includes(item) // if the item is not in the toBeDeleted array keep it else filter it out
+  );
 };
 
 /*
